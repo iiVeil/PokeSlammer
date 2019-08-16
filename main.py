@@ -179,7 +179,7 @@ async def on_message(message):
 async def on_ready():
     spam_.start()
     console_commands_.start()
-    print("--[HOOKED]--\nDeveloped by iiVeil#0001\nAvailable console commands: [autocatcher, ac], [print_var_states, pvs], [identifier, i], [spammer, s]\nAnything typed in that isnt a command will be echoed to the bot!\n")
+    print("--[HOOKED]--\nDeveloped by iiVeil#0001\nAvailable console commands: [autocatcher, ac], [print_var_states, pvs], [identifier, i], [spammer, s], uptime\nAnything typed in that isnt a command will be echoed to the bot!\n")
 
 @tasks.loop(seconds=1.25)
 async def spam_():
@@ -200,31 +200,37 @@ async def console_commands_():
         minute = f'0{minute}'
     if len(str(second)) == 1:
         second = f'0{second}'
-    time = f'{hour}:{minute}:{second}'
-    commands = ['autocatcher', 'ac', 'print_var_states', 'pvs', 'identifier', 'spammer', 'i', 's']
+    timef = f'{hour}:{minute}:{second}'
+    commands = ['autocatcher', 'ac', 'print_var_states', 'pvs', 'identifier', 'spammer', 'i', 's', 'uptime']
     input = await aioconsole.ainput('')
     if str.lower(input) in commands:
         if str.lower(input) == 'ac' or str.lower(input) == 'autocatcher':
             client.autocatcher = not client.autocatcher
-            print(f'{time} [AUTOCATCHER] -> TOGGLED {client.autocatcher}\n')
+            print(f'{timef} [AUTOCATCHER] -> TOGGLED {client.autocatcher}\n')
         elif str.lower(input) == 'pvs' or str.lower(input) == 'print_var_states':
-            print(f'{time} [PVS] -> Autocatcher: ' + str(client.autocatcher))
-            print(f'{time} [PVS] -> Spammer: ' + str(client.spammer))
-            print(f'{time} [PVS] -> Identifier: ' + str(client.identifier))
-            print(f'{time} [PVS] -> Poke Prefix: ' + str(client.poke_prefix))
-            print(f'{time} [PVS] -> Cached Pokemon: ' + str(client.n_pokemon))
-            print(f'{time} [PVS] -> Cached Balance: ' + str(client.balance))
-            print(f'{time} [PVS] -> Active Guild: ' + str(client.active_guild))
-            print(f'{time} [PVS] -> Active Channel: #' + str(client.active_channel) + '\n')
+            print(f'{timef} [PVS] -> Autocatcher: ' + str(client.autocatcher))
+            print(f'{timef} [PVS] -> Spammer: ' + str(client.spammer))
+            print(f'{timef} [PVS] -> Identifier: ' + str(client.identifier))
+            print(f'{timef} [PVS] -> Poke Prefix: ' + str(client.poke_prefix))
+            print(f'{timef} [PVS] -> Cached Pokemon: ' + str(client.n_pokemon))
+            print(f'{timef} [PVS] -> Cached Balance: ' + str(client.balance))
+            print(f'{timef} [PVS] -> Active Guild: ' + str(client.active_guild))
+            print(f'{timef} [PVS] -> Active Channel: #' + str(client.active_channel) + '\n')
         elif str.lower(input) == 'i' or str.lower(input) == 'identifier':
             client.identifier = not client.identifier
-            print(f'{time} [IDENTIFIER] -> TOGGLED {client.identifier}\n')
+            print(f'{timef} [IDENTIFIER] -> TOGGLED {client.identifier}\n')
         elif str.lower(input) == 'spammer' or str.lower(input) == 's':
             if client.active_guild != None and client.active_channel != None:
                 client.spammer = not client.spammer
-                print(f'{time} [SPAMMER] -> TOGGLED {client.spammer}\n')
+                print(f'{timef} [SPAMMER] -> TOGGLED {client.spammer}\n')
             else:
                 print('[CONSOLE] -> Active guild has not been set this session run `[]set_guild` and `[]set_channel` in a channel or set them both with `[]set`.')
+        elif str.lower(input) == 'uptime':
+            current_time = time.time()
+            difference = int(round(current_time - start_time))
+            text = str(datetime.timedelta(seconds=difference))
+            print(f'{timef} [UPTIME] -> {text}\n')
+    
     else:
         if client.active_guild != None and client.active_channel != None:
             await client.active_channel.send(f'{input}')
