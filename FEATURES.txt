@@ -1,0 +1,7 @@
+Currently supported features:
+
+   ; Fast and Stable autocatching
+   ; Pokemon identification
+   ; Console commands 
+   ; Bulk-Trading pokemon and credits
+   ; Text Spammer to spawn and levelup pokemon
