@@ -28,6 +28,7 @@ client.caching = False
 
 '''CONFIG START'''
 user_token = '' # Put your user token in this variable
+client.poke_prefix = 'p!' # The prefix of your pokecord bot
 #client.allowed_users = [user.id, 300307874725494784]
 client.allowed_users = [] # Any user-id you would like to be able to use the bot commands
 client.autocatcher = True # Determines whether the Autocatcher will start on or off, Can be toggled with a command. [True | False]
