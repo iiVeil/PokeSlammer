@@ -18,7 +18,6 @@ client = commands.Bot(command_prefix=bot_prefix)
 client.remove_command('help')
 
 client.spammer = False
-client.poke_prefix = '.'
 client.active_guild = None
 client.active_channel = None
 client.spamming_ = False
