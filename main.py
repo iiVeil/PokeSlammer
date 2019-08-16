@@ -25,12 +25,13 @@ client.spamming_ = False
 client.n_pokemon = 0
 client.balance = 0
 client.caching = False
-client.identifier = False
 
 '''CONFIG START'''
-user_token = 'NDY3ODE1OTE4OTk5Njk5NDc0.XVS2NA.ZUD0_imN4eJT1JjgSP7SdogMYpg' # Put your user token in this variable
-client.allowed_users = [300307874725494784] # Any account-id you would like to be able to use the bot commands
+user_token = '' # Put your user token in this variable
+#client.allowed_users = [user.id, 300307874725494784]
+client.allowed_users = [] # Any user-id you would like to be able to use the bot commands
 client.autocatcher = True # Determines whether the Autocatcher will start on or off, Can be toggled with a command. [True | False]
+client.identifier = False # Determines whether the Identifier will start on or off, Can be toggled with a command. [True | False]
 '''CONFIG END'''
 
 # BOT COMMAND LIST -> 
