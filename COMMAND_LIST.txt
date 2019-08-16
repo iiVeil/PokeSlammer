@@ -3,7 +3,7 @@ Prefix: [] - Changeable in .py file
 -- Discord Commands
 
 []set - Set active guild and channel; Must be run in a channel everytime the bot is re-opened
-[]ac or []autocatcher - Toggles the autocatcher; will catch pokemon in ANY server it is in
+[]ac or []autocatcher - Toggles the autocatcher; Will only catch in the active guild
 []i or []identifier - Toggles pokemon identifier; If you want to be a good samaritan
 []run <text> - Repeats <text> through bot; Useful for running commands on its behalf
 []start_spam or []ss - Toggle text spammer; Useful for spawning pokemon and leveling up current ones
