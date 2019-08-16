@@ -5,3 +5,4 @@ Currently supported features:
    ; Console commands 
    ; Bulk-Trading pokemon and credits
    ; Text Spammer to spawn and levelup pokemon
+   ; Extreme logging for bot events such as levelups and catches
