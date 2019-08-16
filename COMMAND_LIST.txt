@@ -1,0 +1,22 @@
+Prefix: [] - Changeable in .py file
+
+-- Discord Commands
+
+[]set - Set active guild and channel; Must be run in a channel everytime the bot is re-opened
+[]ac or []autocatcher - Toggles the autocatcher; will catch pokemon in ANY server it is in
+[]i or []identifier - Toggles pokemon identifier; If you want to be a good samaritan
+[]run <text> - Repeats <text> through bot; Useful for running commands on its behalf
+[]start_spam or []ss - Toggle text spammer; Useful for spawning pokemon and leveling up current ones
+[]pvs - Prints variable states to console
+[]bulktrade - Bulk trades pokemon & credits to the user running the command; []cache must be done before this command can be used
+[]cache - Caches current balance & amount of pokemon
+[]uptime - Shows clients current uptime
+
+-- Console Commands; no need for a prefix here
+
+autocatcher or ac - Toggles autocatcher
+identifier or i - Toggles Identifier
+print_var_states or pvs - Prints variable states
+spammer or s; If []set has been run in the current session -> Toggle text spammer
+
+-> Anything typed through console that is NOT in the command list will echo through the bot if []set had been used; Better way to run commands on the bots behalf.
