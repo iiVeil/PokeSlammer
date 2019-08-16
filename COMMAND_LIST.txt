@@ -18,5 +18,6 @@ autocatcher or ac - Toggles autocatcher
 identifier or i - Toggles Identifier
 print_var_states or pvs - Prints variable states
 spammer or s; If []set has been run in the current session -> Toggle text spammer
+uptime; Prints bot uptime
 
 -> Anything typed through console that is NOT in the command list will echo through the bot if []set had been used; Better way to run commands on the bots behalf.
