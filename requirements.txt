@@ -1,0 +1,7 @@
+discord
+requests
+aiofiles
+datetime
+asyncio
+aiohttp
+aioconsole
