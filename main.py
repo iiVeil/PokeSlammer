@@ -189,7 +189,7 @@ async def on_message(message):
 async def on_ready():
     spam_.start()
     console_commands_.start()
-    print("--[HOOKED]--\nDeveloped by iiVeil#0001\nAvailable console commands: [autocatcher, ac], [print_var_states, pvs], [identifier, i], [spammer, s], uptime\nAnything typed in that isnt a command will be echoed to the bot!\n")
+    print("--[HOOKED]--\nDeveloped by iiVeil#0001\nAvailable console commands: See COMMANDS_LIST.txt\nAnything typed in that isnt a command will be echoed to the bot!\n")
 
 @tasks.loop(seconds=1.25)
 async def spam_():
@@ -522,7 +522,7 @@ async def set_both_(ctx):
     if len(str(second)) == 1:
         second = f'0{second}'
     time = f'{hour}:{minute}:{second}'
-    print(f'{time} [CONSOLE] -> Guild & Channel set!')
+    print(f'{time} [CONSOLE] -> Guild & Channel set!\n')
 
 @client.command(name='blacklistadd', aliases=['bla'])
 async def append_blacklist_(ctx, *, pokemon=None):
