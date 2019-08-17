@@ -11,6 +11,12 @@ Prefix: [] - Changeable in .py file
 []bulktrade - Bulk trades pokemon & credits to the user running the command; []cache must be done before this command can be used
 []cache - Caches current balance & amount of pokemon
 []uptime - Shows clients current uptime
+[]wlo or []whitelistadd pokemon, by, comma; Adds pokemon to the whitelist
+[]wlr or []whitelistrem pokemon, by, comma; Removes pokemon from the whitelist
+[]bla or []blacklistadd pokemon, by, comma; Removes pokemon to the blacklist
+[]blr or []blacklistrem pokemon, by, comma; Removes pokemon from the blacklist
+[]blo or []blacklistoff; Turns blacklist off
+[]wlo or []whitelistoff: turns whitelist off
 
 -- Console Commands; no need for a prefix here
 
@@ -19,5 +25,11 @@ identifier or i - Toggles Identifier
 print_var_states or pvs - Prints variable states
 spammer or s; If []set has been run in the current session -> Toggle text spammer
 uptime; Prints bot uptime
+wlo or whitelistadd pokemon, by, comma; Adds pokemon to the whitelist
+wlr or whitelistrem pokemon, by, comma; Removes pokemon from the whitelist
+bla or blacklistadd pokemon, by, comma; Removes pokemon to the blacklist
+blr or blacklistrem pokemon, by, comma; Removes pokemon from the blacklist
+wlo; Turns whitelist off
+blo; Turns blacklist off
 
 -> Anything typed through console that is NOT in the command list will echo through the bot if []set had been used; Better way to run commands on the bots behalf.
