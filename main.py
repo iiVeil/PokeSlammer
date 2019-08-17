@@ -224,7 +224,7 @@ async def console_commands_():
                 client.spammer = not client.spammer
                 print(f'{timef} [SPAMMER] -> TOGGLED {client.spammer}\n')
             else:
-                print(f'{timef} [CONSOLE] -> Active guild has not been set this session run `[]set_guild` and `[]set_channel` in a channel or set them both with `[]set`.\n')
+                print(f'{timef} [CONSOLE] -> Active guild has not been set this session run `[]set` in a channel.\n')
         elif str.lower(input) == 'uptime':
             current_time = time.time()
             difference = int(round(current_time - start_time))
@@ -236,7 +236,7 @@ async def console_commands_():
             await client.active_channel.send(f'{input}')
             print(f'{timef} [CONSOLE] -> Sent `{input}` to #{str(client.active_channel)}\n')
         else:
-            print(f'{timef} [CONSOLE] -> Active guild has not been set this session run `[]set_guild` and `[]set_channel` in a channel or set them both with `[]set`.\n')
+            print(f'{timef} [CONSOLE] -> Active guild has not been set this session run `[]set` in a channel.\n')
 
 @client.command(name='autocatcher', aliases=['ac'])
 async def autocatcher_(ctx):
