@@ -59,7 +59,7 @@ async def on_message(message):
         if message.guild != client.active_guild:
             if message.author.id in client.allowed_users:
                 await client.process_commands(message)
-                return
+            return
         '''
         Caching
         '''
