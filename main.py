@@ -28,6 +28,7 @@ client.blacklist = []
 client.whitelist = []
 client.whitelistactive = False
 client.blacklistactive = False
+client.remote_console_ = False
 
 '''CONFIG START'''
 user_token = '' # Put your user token in this variable
@@ -60,6 +61,15 @@ async def on_message(message):
             if message.author.id in client.allowed_users:
                 await client.process_commands(message)
             return
+        if client.remote_console_:
+            print(f'{time} [REMOTE CONSOLE][CONTENT] -> {message.content}')
+            try:
+                print(f'{time} [REMOTE CONSOLE][TITLE] -> {message.embeds[0].title}')
+                print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
+            except Exception:
+                print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
+                pass
+            client.remote_console_ = False
         '''
         Caching
         '''
@@ -321,7 +331,8 @@ async def console_commands_():
     else:
         if client.active_guild != None and client.active_channel != None:
             await client.active_channel.send(f'{input}')
-            print(f'{timef} [CONSOLE] -> Sent `{input}` to #{str(client.active_channel)}\n')
+            print(f'{timef} [REMOTE CONSOLE][TRIGGER] -> Sent `{input}` to #{str(client.active_channel)}')
+            client.remote_console_ = True
         else:
             print(f'{timef} [CONSOLE] -> Active guild has not been set this session run `[]set` in a channel.\n')
 
@@ -451,11 +462,13 @@ async def bulktrade_(ctx):
         test2 = 0
         sample = 1
         sample2 = 26
-        while client.n_pokemon >= 25:
+        while sample2-1 <= 225:
             message = f'{client.poke_prefix}p add '
             for i in range(sample, sample2):
                 message += f'{i} '
                 test += 1
+            if client.n_pokemon < 25:
+                break
             client.n_pokemon -= 25
             sample += 25
             sample2 += 25
