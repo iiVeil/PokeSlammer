@@ -64,13 +64,16 @@ async def on_message(message):
         if client.remote_console_:
             print(f'{time} [REMOTE CONSOLE][CONTENT] -> {message.content}')
             try:
-                print(f'{time} [REMOTE CONSOLE][TITLE] -> {message.embeds[0].title}')
+                print(f'{time} [REMOTE CONSOLE][TITLE] -> {message.embeds[0].title}\n')
+            except Exception:
+                pass
+            try:
                 print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
             except Exception:
-                try:
-                    print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
-                except Exception:
-                    pass
+                pass
+            try:
+                print(f'{time} [REMOTE CONSOLE][FOOTER] -> {message.embeds[0].footer.text}\n')
+            except Exception:
                 pass
             client.remote_console_ = False
         '''
