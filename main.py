@@ -67,7 +67,10 @@ async def on_message(message):
                 print(f'{time} [REMOTE CONSOLE][TITLE] -> {message.embeds[0].title}')
                 print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
             except Exception:
-                print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
+                try:
+                    print(f'{time} [REMOTE CONSOLE][DESCRIPTION] -> {message.embeds[0].description}\n')
+                except Exception:
+                    pass
                 pass
             client.remote_console_ = False
         '''
