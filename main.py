@@ -535,9 +535,9 @@ async def cache_pokemon_(ctx):
     if ctx.message.guild != client.active_guild:
         return
     client.caching = True
-    await ctx.send('.pokemon')
+    await ctx.send(f'{client.poke_prefix}pokemon')
     await asyncio.sleep(1.75)
-    await ctx.send('.balance')
+    await ctx.send(f'{client.poke_prefix}balance')
 
 @client.command(name='set')
 async def set_both_(ctx):
