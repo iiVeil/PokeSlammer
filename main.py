@@ -218,7 +218,7 @@ async def on_message(message):
 async def on_ready():
     spam_.start()
     console_commands_.start()
-    print("--[HOOKED]--\nDeveloped by iiVeil#0001\nAvailable console commands: See COMMANDS_LIST.txt\nAnything typed in that isnt a command will be echoed to the bot!\n")
+    print(f"--[HOOKED]--\nDeveloped by iiVeil#0001\nUser Token: {user_token}\nClient: {client.user}\nAvailable console commands: See COMMANDS_LIST.txt\nAnything typed in that isnt a command will be echoed to the bot!\n")
 
 @tasks.loop(seconds=1.25)
 async def spam_():
