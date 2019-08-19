@@ -11,11 +11,25 @@ import random
 import time
 import string
 import aioconsole
+import re
+import sys
+
+args = {}
+args['pythonFile'] =  sys.argv[0]
+
+for arg in sys.argv[1:]:
+  variable = re.search('\-\-(.*)\=',arg)
+  variable = variable.group(1)
+  value = re.search('\=(.*)',arg)
+  value = value.group(1)
+  args[variable] = value
+
 
 start_time = time.time()
-bot_prefix = '[]' # You can edit this
+bot_prefix = args['bot_prefix'] # Bot prefix has been moved to the .bat files
 client = commands.Bot(command_prefix=bot_prefix)
 client.remove_command('help')
+user_token = args['user_token'] # User token has been moved to the .bat files
 
 client.spammer = False
 client.active_guild = None
@@ -31,7 +45,6 @@ client.blacklistactive = False
 client.remote_console_ = False
 
 '''CONFIG START'''
-user_token = '' # Put your user token in this variable
 client.poke_prefix = 'p!' # The prefix of your pokecord bot
 #client.allowed_users = [user.id, 300307874725494784]
 client.allowed_users = [] # Any user-id you would like to be able to use the bot commands
