@@ -12,6 +12,8 @@ Steps to install:
 3F. Find the option called "detectable" and open its headers
 3G. Scroll through list until you find [authorization] and copy its contents
 
+3. Put your user token and desired bot prefix inside the batch file.
+
 4. Open the main python file in a text editor and edit the config but do not change anything else.
 
 5. Run start.bat or altstart.bat whichever one works for you.
