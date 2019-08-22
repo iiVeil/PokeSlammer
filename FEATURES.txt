@@ -6,3 +6,4 @@ Currently supported features:
    ; Bulk-Trading pokemon and credits
    ; Text Spammer to spawn and levelup pokemon
    ; Extreme logging for bot events such as levelups and catches
+   ; Whitelisting and Blacklisting of pokemon
