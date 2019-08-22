@@ -125,6 +125,8 @@ async def on_message(message):
                         message += ' | NEW'
                 except IndexError:
                     message += ' '
+                if str.lower(list[1]).find('shiny') != -1:
+                    message += ' | SHINY!'
                 print(f'{time} ' + message + '\n')
         try:
             if message.embeds[0].description.find('is now level ') != -1:
